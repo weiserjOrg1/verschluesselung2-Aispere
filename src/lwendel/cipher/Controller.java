@@ -5,13 +5,11 @@ import java.awt.event.*;
 public class Controller implements ActionListener {
 
 	//attributes
-	private Model m;
 	private View v;
 	
 	//constructor
 	public Controller() {
-		this.m = new Model();
-		this.v = new View(this, this.m);
+		this.v = new View(this);
 	}
 
 	@Override

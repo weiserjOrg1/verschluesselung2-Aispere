@@ -14,12 +14,10 @@ public class View extends JFrame {
 	public ButtonGroup grp;
 	public JPanel np, sp;
 	public Controller c;
-	public Model m;
 	
 	//constructor
-	public View(Controller c1, Model m1) {
+	public View(Controller c1) {
 		this.c = c1;
-		this.m = m1;
 		
 		this.grp = new ButtonGroup();
 		this.np = new JPanel(new FlowLayout());
