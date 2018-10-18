@@ -3,12 +3,18 @@ package lwendel.cipher;
 public class ShiftCipher extends MonoAlphabeticCipher {
 
 	//constructor
-	public ShiftCipher(int value) {
+	public ShiftCipher(String value) {
 		this.setShiftValue(value);
 	}
 	
 	//set-method(s)
-	public void setShiftValue(int value) {
+	public void setShiftValue(String v) {
+		int value;
+		try {
+			value = Integer.parseInt(v);
+		} catch (NumberFormatException exc) {
+			value = 0;
+		}
 		value = value % 30;
 		String alphabet = "abcdefghijklmnopqrstuvwxyzßäöü";
 		String secrAlphabet = "";

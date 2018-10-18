@@ -31,13 +31,16 @@ public class MonoAlphabeticCipher implements Cipher {
 			String y = "" + x;
 			if (secretAlphabet.contains(y)) {
 				ok = false;
+				break;
 			}
 		}
 		for (int i = 0 ; i < 30 ; i++) { //cant't be longer than 30 letters and no equal characters
 			if (secretAlphabet.lastIndexOf(secretAlphabet.charAt(i)) != secretAlphabet.indexOf(secretAlphabet.charAt(i))) {
 				ok = false;
+				break;
 			} else if (secretAlphabet.length() != 30) {
 				ok = false;
+				break;
 			}
 		}
 		if (ok) {
