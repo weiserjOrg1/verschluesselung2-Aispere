@@ -15,7 +15,13 @@ public class Controller implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if (this.v.getButtonSelected() == 1) { //Shift
-			ShiftCipher cipher = new ShiftCipher(this.v.getSecrAlph());
+			int shiftValue;
+			try {
+				shiftValue = Integer.parseInt(this.v.getSecrAlph());
+			} catch (NumberFormatException exc) {
+				shiftValue = 0;
+			}
+			ShiftCipher cipher = new ShiftCipher(shiftValue);
 			if (this.v.isDecrPressed(e)) {
 				this.v.setOutText(cipher.decrypt(this.v.getInText()));
 			}
